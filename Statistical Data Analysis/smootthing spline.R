@@ -15,6 +15,8 @@ spline_fit <- gam(ANN ~ s(LAT, LON), data = data)
 # Predict smoothed values on the original data
 data$y_smooth <- predict(spline_fit)
 
+mean((data$ANN-data$y_smooth)^2) #7.15214
+
 # Visualize the smoothed values in 3D using plotly
 library(plotly)
 
