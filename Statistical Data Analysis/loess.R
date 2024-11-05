@@ -16,7 +16,8 @@ loess_residual <- loess_fit$residuals
 
 results <- data.frame(Actual = data$ANN, Predicted = data$y_smooth)
 
-
+# Error
+mean((data$ANN-data$y_smooth)^2) # 12.86997
 
 # Load necessary library
 library(plotly)
